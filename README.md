@@ -14,7 +14,3 @@ Backend
 -------
 
 Express, will just pull an entire page from j-archive, parse it, send it to the frontend
-
-
-
-I feel like that's about it. 
