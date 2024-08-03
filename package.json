@@ -1,0 +1,19 @@
+{
+  "name": "jeopardy-practice",
+  "version": "1.0.0",
+  "description": "jeopardy practice app",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/burnsnoss/jeopardy-practice.git"
+  },
+  "author": "Casey Burns",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/burnsnoss/jeopardy-practice/issues"
+  },
+  "homepage": "https://github.com/burnsnoss/jeopardy-practice#readme"
+}
