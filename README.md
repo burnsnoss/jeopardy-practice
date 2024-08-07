@@ -30,17 +30,22 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 nvm install 22
 
 # install typescript
-npm install -g ts-node`
+npm install -g ts-node
 
 # install dependencies
 npm ci
 ```
 
 
-Run Backend (dev)
-=================
-
+Run Backend
+===========
 ```
-npm run dev
+npm run backend
 ```
 
+
+Run Frontend
+============
+```
+npm run frontend
+```
