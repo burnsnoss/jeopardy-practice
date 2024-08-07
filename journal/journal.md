@@ -16,7 +16,7 @@ npm install -g ts-node
 
 8/6/2024
 --------
-Created a typescript React app in the `game` directory following [this tutorial](https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/):
+Created a typescript React app in the `game` directory following [this tutorial](https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/) and [this tutorial](https://create-react-app.dev/docs/adding-typescript/):
 ```
 npx create-react-app game --template typescript
 ```
@@ -43,5 +43,7 @@ Edited `game/package.json` Typescript version in `"dependencies"`, set it to `^5
 Also added `"proxy": "http://localhost:5000"` to `game/package.json` at the suggestion of [this tutorial](https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/).
 
 [package.json tutorial kind of thing](https://nodesource.com/blog/the-basics-of-package-json-in-node-js-and-npm/)
+
+[tsconfig tutorial kinda thing](https://www.typescriptlang.org/tsconfig/)
 
 
