@@ -47,3 +47,16 @@ Also added `"proxy": "http://localhost:5000"` to `game/package.json` at the sugg
 [tsconfig tutorial kinda thing](https://www.typescriptlang.org/tsconfig/)
 
 
+8/9/2024
+--------
+Plan is to finish the backend functionality today, and design a little bit more of the frontend game experience
+
+`[x] design base frontend functionality`
+
+`[x] design backend endpoints`
+
+`[ ] implement backend endpoints` - we only got to the SeasonsList endpoint today
+
+`[x] implement basic backend logging with pino`
+
+Found a [USB Buzzer](https://www.delcomproducts.com/productdetails.asp?PartNumber=706400).
