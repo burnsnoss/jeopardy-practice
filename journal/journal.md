@@ -60,3 +60,9 @@ Plan is to finish the backend functionality today, and design a little bit more 
 `[x] implement basic backend logging with pino`
 
 Found a [USB Buzzer](https://www.delcomproducts.com/productdetails.asp?PartNumber=706400).
+
+
+
+8/11/2024
+---------
+Just really quickly added some interfaces to the seasons model and set up a function declaration for getSeasonByUrl in the season controller. 

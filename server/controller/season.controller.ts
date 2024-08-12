@@ -1,14 +1,14 @@
 import { Request } from 'express';
-import { SeasonMetadata, SeasonsList } from '../model/season.model';
+import { SeasonMetadata, SeasonsList, Season } from '../model/season.model';
 import { logger } from '../logger';
 import { JSDOM } from 'jsdom';
 
 // TODO: figure out a better way to use log path
 // TODO: better types for HTML elements and text returned from those elements
 //   so as to minimize the 'string | null | undefined' stuff
-const LOG_PATH ='[SeasonController::getSeasonsHandler]';
+const LOG_PATH ='[SeasonController::getSeasons]';
 
-export async function getSeasonsHandler(req: Request): Promise<SeasonsList> {
+export async function getSeasons(): Promise<SeasonsList> {
   try {
     // fetch HTML from j-archive seasons list page
     const response: Response = await fetch('https://j-archive.com/listseasons.php');
@@ -95,6 +95,13 @@ export async function getSeasonsHandler(req: Request): Promise<SeasonsList> {
   } catch (error: any) {
     logger.error(error);
     throw error;
+  }
+}
+
+export async function getSeasonByUrl(req: Request): Promise<Season> {
+  return {
+    episodes: [],
+    name: 'season 69'
   }
 }
 

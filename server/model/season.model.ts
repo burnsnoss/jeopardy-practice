@@ -9,3 +9,14 @@ export interface SeasonMetadata {
   endDate: Date;
   episodeCount: number;
 }
+
+export interface Season {
+  episodes: EpisodeMetadata[];
+  name: string;
+}
+
+export interface EpisodeMetadata {
+  number: number;
+  airDate: Date;
+  contestants: string;
+}

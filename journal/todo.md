@@ -6,3 +6,4 @@ TODO
 3. CircleCI testing
 4. Corner Case: missing clues (see [this game](https://j-archive.com/showgame.php?game_id=5817))
 5. Design more in-depth frontend functionality
+6. Corner Case: Super jeopardy
