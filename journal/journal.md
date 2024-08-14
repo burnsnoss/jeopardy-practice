@@ -66,3 +66,18 @@ Found a [USB Buzzer](https://www.delcomproducts.com/productdetails.asp?PartNumbe
 8/11/2024
 ---------
 Just really quickly added some interfaces to the seasons model and set up a function declaration for getSeasonByUrl in the season controller. 
+
+
+
+
+8/13/2024
+---------
+Going to try to work on GET season and GET game today
+
+`[ ] GET season`
+
+`[ ] GET game`
+
+I ended up implementing a logging method which uses "child" loggers of the pino logger we use to identify the module/method the code resides in.
+
+Having trouble parsing the HTML again bc of weird HTML characters needing 'escaping' so gotta figure that out. installed lodash, might not need it though

@@ -1,13 +1,13 @@
 import express from 'express';
 import { logger } from './logger';
 import { Forbidden } from 'http-errors';
-import { getSeasons, getSeasonByUrl } from './controller/season.controller';
+import { getSeasons, getSeasonById } from './controller/season.controller';
+import { config } from './config';
 
 const app = express();
-const port = 5000;
 
 
-app.get('/', (req, res) => {
+app.get('/', (_, res) => {
   logger.info('GET /');
   logger.info('Sending 403 Forbidden');
   res.status(403).send('Forbidden');
@@ -22,17 +22,17 @@ app.get('/seasons', async (req, res) => {
   logger.info(res);
 });
 
-app.get('/seasons/:seasonUrl', (req, res) => {
-  logger.info('GET /seasons/:seasonUrl');
+app.get('/seasons/:seasonId', async (req, res) => {
+  logger.info('GET /seasons/:seasonId requested');
   logger.info(req);
-  res.status(200).send(await getSeasonByUrl(req));
-  logger.info('GET /seasons/:seasonUrl responding 200');
+  res.status(200).send(await getSeasonById(req.params.seasonId));
+  logger.info('GET /seasons/:seasonId responding 200');
 });
 
 app.get('/game/:gameUrl', (req, res) => {
 
 });
 
-app.listen(port, () => {
-  logger.info(`Server is running on port ${port}`);
+app.listen(config.port, () => {
+  logger.info(`Server is running on config. ${config.port}`);
 });
