@@ -2,7 +2,6 @@ import { SeasonMetadata, SeasonsList, Season, EpisodeMetadata } from '../model/s
 import { logger } from '../logger';
 import { JSDOM } from 'jsdom';
 import { config } from '../config';
-import _ = require('lodash');
 
 // TODO: better types for HTML elements and text returned from those elements
 //   so as to minimize the 'string | null | undefined' stuff
@@ -145,7 +144,7 @@ export async function getSeasonById(id: string): Promise<Season> {
         if (j === 0) {
           const linkElement: HTMLAnchorElement | null = cell.querySelector('a');
           const episodeUrl = linkElement?.getAttribute('href');
-          const linkContent = linkElement?.textContent;
+          const linkContent = linkElement?.innerHTML;
 
           if (!episodeUrl || !linkContent) {
             log.error(`Could not find episode URL or episode number for table element (${i}, ${j})`);
@@ -153,14 +152,11 @@ export async function getSeasonById(id: string): Promise<Season> {
           }
 
           episodeId = episodeUrl.split('=')[1];
-          // log.info(`Link content: ${linkContent}`);
-          const decodedLinkContent = _.unescape(linkContent);
-          // log.info(`Decoded link content: ${decodedLinkContent}`);
-          const linkContentSplit = decodedLinkContent.split(', aired ');
-          
+          const linkContentSplit = linkContent.split(', aired&nbsp;');
+
           // TODO: check that the split has a length of at least 2 for proper indexing
           airDate = new Date(linkContentSplit[1]);
-          episodeNumber = linkContentSplit[0].substring(5);
+          episodeNumber = linkContentSplit[0].substring(1);
         }
         // get contestants
         if (j === 1) {
@@ -169,11 +165,11 @@ export async function getSeasonById(id: string): Promise<Season> {
             log.error(`Could not find contestants for table element (${i}, ${j})`);
             break;
           }
-          contestants = contestantsText;
+          contestants = contestantsText.trim();
         }
         // get notes
         if (j === 2) {
-          note = cell.textContent;
+          note = cell.textContent?.trim();
         }
       }
           

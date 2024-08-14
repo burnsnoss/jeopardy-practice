@@ -80,4 +80,10 @@ Going to try to work on GET season and GET game today
 
 I ended up implementing a logging method which uses "child" loggers of the pino logger we use to identify the module/method the code resides in.
 
-Having trouble parsing the HTML again bc of weird HTML characters needing 'escaping' so gotta figure that out. installed lodash, might not need it though
+Having trouble parsing the HTML again bc of weird HTML characters needing 'escaping' so gotta figure that out. installed `lodash`, might not need it though
+
+
+
+8/14/2024
+---------
+Going to try to fix my HTML decoding problem today and finish the backend

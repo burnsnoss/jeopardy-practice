@@ -22,11 +22,9 @@
   "dependencies": {
     "@types/http-errors": "^2.0.4",
     "@types/jsdom": "^21.1.7",
-    "@types/lodash": "^4.17.7",
     "dayjs": "^1.11.12",
     "express": "^4.19.2",
     "jsdom": "^24.1.1",
-    "lodash": "^4.17.21",
     "pino": "^9.3.2",
     "pino-pretty": "^11.2.2"
   },
