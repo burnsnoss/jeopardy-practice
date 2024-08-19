@@ -87,3 +87,14 @@ Having trouble parsing the HTML again bc of weird HTML characters needing 'escap
 8/14/2024
 ---------
 Going to try to fix my HTML decoding problem today and finish the backend
+
+Finished season controller (except for some TODOs)
+
+Almost finished game controller, so far we have the title, categories, and jeopardy rounds, just need final jeopardy
+
+
+
+
+8/19/2024
+---------
+Today I'm going to complete the backend (parse final jeopardy) and get started on the front end

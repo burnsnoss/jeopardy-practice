@@ -1,8 +1,10 @@
 import express from 'express';
+import { config } from './config';
 import { logger } from './logger';
 import { Forbidden } from 'http-errors';
 import { getSeasons, getSeasonById } from './controller/season.controller';
-import { config } from './config';
+import { getGameById } from './controller/game.controller';
+
 
 const app = express();
 
@@ -29,8 +31,11 @@ app.get('/seasons/:seasonId', async (req, res) => {
   logger.info('GET /seasons/:seasonId responding 200');
 });
 
-app.get('/game/:gameUrl', (req, res) => {
-
+app.get('/game/:gameId', async (req, res) => {
+  logger.info('GET /game/:gameId requested');
+  logger.info(req);
+  res.status(200).send(await getGameById(req.params.gameId));
+  logger.info('GET /game/:gameId responding 200');
 });
 
 app.listen(config.port, () => {

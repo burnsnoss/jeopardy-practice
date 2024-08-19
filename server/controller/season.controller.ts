@@ -1,7 +1,8 @@
-import { SeasonMetadata, SeasonsList, Season, EpisodeMetadata } from '../model/season.model';
-import { logger } from '../logger';
-import { JSDOM } from 'jsdom';
 import { config } from '../config';
+import { logger } from '../logger';
+import { SeasonMetadata, SeasonsList, Season, EpisodeMetadata } from '../model/season.model';
+import { JSDOM } from 'jsdom';
+import { tableParseHelper } from '../util';
 
 // TODO: better types for HTML elements and text returned from those elements
 //   so as to minimize the 'string | null | undefined' stuff
@@ -92,6 +93,8 @@ export async function getSeasons(): Promise<SeasonsList> {
         seasonsList.seasons.push(seasonMetadata);
       }
     }
+    log.info('Returning Seasons List:');
+    log.info(seasonsList);
     return seasonsList;
   } catch (error: any) {
     log.error(error);
@@ -179,10 +182,14 @@ export async function getSeasonById(id: string): Promise<Season> {
           number: episodeNumber,
           airDate: airDate,
           contestants: contestants,
-          note: note || '',
+          note: note || '',  // sometimes can return w/ special chars
         });
       }
     }
+
+    log.info('Returning Season:');
+    log.info(episodeList);
+    log.info('Title: ' + seasonTitle);
 
     return {
       episodes: episodeList,
@@ -193,35 +200,4 @@ export async function getSeasonById(id: string): Promise<Season> {
     log.error(error);
     throw error;
   }
-}
-
-
-/* 
- * tableParseHelper - returns collection of rows from first table in HTML
- * Input [string] - string of HTML to parse
- * Output [HTMLCollectionOf<HTMLTableRowElement>] - collection of rows
- */
-function tableParseHelper(htmlBody: string): HTMLCollectionOf<HTMLTableRowElement> {
-  const log = logger.child({ 
-    module: LOG_MODULE,
-    method: 'tableParseHelper'
-  });
-  
-  // parse HTML
-  const dom: JSDOM = new JSDOM(htmlBody);
-  // Grab table from HTML
-  const table: HTMLTableElement | null = dom.window.document.querySelector('table');
-  if (!table) {
-    log.error(`Could not find table element`);
-    throw new Error(`Could not find table element`);
-  }
-
-  // Grab a collection of rows from the table to return
-  const tableRows: HTMLCollectionOf<HTMLTableRowElement> | undefined = table.rows;
-  if (!tableRows) {
-    log.error(`Could not find rows in table`);
-    throw new Error(`Could not find rows in table`);
-  }
-
-  return tableRows;
 }
