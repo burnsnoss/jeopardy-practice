@@ -3,7 +3,7 @@ export interface SeasonsList {
 }
 
 export interface SeasonMetadata {
-  seasonUrl: string;
+  seasonId: string;
   seasonName: string;
   startDate: Date;
   endDate: Date;
@@ -16,7 +16,9 @@ export interface Season {
 }
 
 export interface EpisodeMetadata {
-  number: number;
+  id: string;
+  number: string;
   airDate: Date;
   contestants: string;
+  note: string;
 }
