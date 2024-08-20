@@ -2,12 +2,10 @@
   "name": "jeopardy-practice",
   "version": "1.0.0",
   "description": "jeopardy practice app",
-  "main": "server/app.ts",
+  "main": "src/app.ts",
   "scripts": {
     "test": "test",
-    "start": "tsc && node dist/app.js",
-    "frontend": "cd game && npm start",
-    "backend": "nodemon server/app.ts"
+    "backend": "nodemon src/app.ts"
   },
   "repository": {
     "type": "git",
