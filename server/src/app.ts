@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import { config } from './config';
 import { logger } from './logger';
 import { Forbidden } from 'http-errors';
@@ -7,7 +8,7 @@ import { getGameById } from './controller/game.controller';
 
 
 const app = express();
-
+app.use(cors());
 
 app.get('/', (_, res) => {
   logger.info('GET /');

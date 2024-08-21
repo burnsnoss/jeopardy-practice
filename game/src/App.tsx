@@ -1,23 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import axios from 'axios';
 import './App.css';
+import graphic from './resources/jeopardy-graphic.jpg';
+
 
 function App() {
+  
+  // const apiCall = () => {
+  //   axios.get('http://localhost:5000/seasons').then((response) => {
+  //     console.log(response)
+  //   }).catch((error) => {
+  //     console.log(error)
+  //   });
+  // }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app">
+      <header className="app-header">
+        {/* <button onClick={apiCall}>Make API Call</button> */}
+        <img src={graphic} className="app-logo"></img>
+        <button className="start-button">START GAME</button>
       </header>
     </div>
   );

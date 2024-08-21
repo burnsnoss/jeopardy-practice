@@ -98,3 +98,10 @@ Almost finished game controller, so far we have the title, categories, and jeopa
 8/19/2024
 ---------
 Today I'm going to complete the backend (parse final jeopardy) and get started on the front end
+
+
+
+8/20/2024
+---------
+connecting frontend to backend today, using [this tutorial](https://dev.to/techcheck/creating-a-react-node-and-express-app-1ieg)
+
