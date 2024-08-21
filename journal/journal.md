@@ -105,3 +105,13 @@ Today I'm going to complete the backend (parse final jeopardy) and get started o
 ---------
 connecting frontend to backend today, using [this tutorial](https://dev.to/techcheck/creating-a-react-node-and-express-app-1ieg)
 
+created a splash page for the frontend, added some fonts, installed axios and cors for calls to the backend.
+
+added some graphics for the icon and splash page too
+
+- [img tag in react](https://create-react-app.dev/docs/adding-images-fonts-and-files/)
+- [jeopardy color palette](https://www.color-hex.com/color-palette/1019329)
+- [jeopardy font](https://www.reddit.com/r/Jeopardy/comments/gumlmm/what_font_does_jeopardy_use/)
+- [custom fonts in react](https://dev.to/ziqinyeow/how-to-add-custom-font-file-to-your-react-app-31kb)
+- [nodejs event loop](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick)
+- [react playlist](https://youtu.be/ijdCDd8Wg2o?si=X-xs1Vsv6R7skGiH)
