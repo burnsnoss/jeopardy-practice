@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.app-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 @font-face {
   font-family: 'VIQuanTuHoa';
   src: local('VIQuanTuHoa'), url(./resources/QUANTU1H.TTF) format('truetype');

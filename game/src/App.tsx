@@ -1,6 +1,6 @@
 import axios from 'axios';
-import './App.css';
-import graphic from './resources/jeopardy-graphic.jpg';
+import { Routes } from './Routes';
+// import './App.css';
 
 
 function App() {
@@ -14,13 +14,13 @@ function App() {
   // }
 
   return (
-    <div className="app">
-      <header className="app-header">
-        {/* <button onClick={apiCall}>Make API Call</button> */}
-        <img src={graphic} className="app-logo"></img>
-        <button className="start-button">START GAME</button>
-      </header>
-    </div>
+    // <div className="app">
+    //   <header className="app-header">
+    //     {/* <button onClick={apiCall}>Make API Call</button> */}
+        
+    //   </header>
+    // </div>
+   <Routes />
   );
 }
 

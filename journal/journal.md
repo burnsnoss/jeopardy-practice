@@ -115,3 +115,12 @@ added some graphics for the icon and splash page too
 - [custom fonts in react](https://dev.to/ziqinyeow/how-to-add-custom-font-file-to-your-react-app-31kb)
 - [nodejs event loop](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick)
 - [react playlist](https://youtu.be/ijdCDd8Wg2o?si=X-xs1Vsv6R7skGiH)
+
+
+8/22/2024
+---------
+gonna try to do the season list page today and if im lucky, the game select page
+
+[React Routes](https://www.youtube.com/watch?v=xMYo9jaMah8)
+
+ran `npm install react-router-dom` and `npm i @types/react-router-dom`
