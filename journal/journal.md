@@ -98,3 +98,29 @@ Almost finished game controller, so far we have the title, categories, and jeopa
 8/19/2024
 ---------
 Today I'm going to complete the backend (parse final jeopardy) and get started on the front end
+
+
+
+8/20/2024
+---------
+connecting frontend to backend today, using [this tutorial](https://dev.to/techcheck/creating-a-react-node-and-express-app-1ieg)
+
+created a splash page for the frontend, added some fonts, installed axios and cors for calls to the backend.
+
+added some graphics for the icon and splash page too
+
+- [img tag in react](https://create-react-app.dev/docs/adding-images-fonts-and-files/)
+- [jeopardy color palette](https://www.color-hex.com/color-palette/1019329)
+- [jeopardy font](https://www.reddit.com/r/Jeopardy/comments/gumlmm/what_font_does_jeopardy_use/)
+- [custom fonts in react](https://dev.to/ziqinyeow/how-to-add-custom-font-file-to-your-react-app-31kb)
+- [nodejs event loop](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick)
+- [react playlist](https://youtu.be/ijdCDd8Wg2o?si=X-xs1Vsv6R7skGiH)
+
+
+8/22/2024
+---------
+gonna try to do the season list page today and if im lucky, the game select page
+
+[React Routes](https://www.youtube.com/watch?v=xMYo9jaMah8)
+
+ran `npm install react-router-dom` and `npm i @types/react-router-dom`
