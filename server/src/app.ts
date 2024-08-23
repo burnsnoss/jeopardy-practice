@@ -22,7 +22,6 @@ app.get('/seasons', async (req, res) => {
   logger.info(req);
   res.status(200).send(await getSeasons());
   logger.info('GET /seasons responding 200');
-  logger.info(res);
 });
 
 app.get('/seasons/:seasonId', async (req, res) => {
@@ -40,5 +39,5 @@ app.get('/game/:gameId', async (req, res) => {
 });
 
 app.listen(config.port, () => {
-  logger.info(`Server is running on config. ${config.port}`);
+  logger.info(`Server is running on port ${config.port}`);
 });

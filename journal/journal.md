@@ -126,3 +126,11 @@ gonna try to do the season list page today and if im lucky, the game select page
 ran `npm install react-router-dom` and `npm i @types/react-router-dom` in game 
 
 routed the pages via url. Now I will make the "Start Game" button work and display the seasons list
+
+
+
+8/23/2024
+---------
+having trouble with the useEffect hook. It seems to not want to run
+
+fixed it using this [how-to](https://stackoverflow.com/questions/57847626/using-async-await-inside-a-react-functional-component)

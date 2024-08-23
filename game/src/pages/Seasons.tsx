@@ -2,31 +2,21 @@ import axios from 'axios';
 import { SeasonsListDOM } from '../model/Season.model';
 import { useState, useEffect, useCallback } from 'react';
 import { SeasonsList } from '../component/SeasonsList';
+import { config } from '../config';
+import { useLocation } from 'react-router-dom';
 
 export const Seasons = () => {
 
-  const [seasonsData, setSeasonsData] = useState({} as SeasonsListDOM);
-
-  const getSeasons = useCallback(async () => {
-    const data = await axios.get('http://localhost:5000/seasons').then((response) => {
-      console.log(response);
-      return response.data;
-    }).catch((error) => {
-      console.log(error);
-      throw new Error('Failed to retrieve seasons');
-    });
-    console.log('testsets' + data);
-    //setSeasonsData(data);
-    return data;
-  }, []);
-
-  useEffect(() => {
-    getSeasons();
-  }, [getSeasons]);
+  // let seasons = useLocation();
 
   return (
     <div>
-      <SeasonsList seasons={seasonsData.seasons} />
+      {/* <ol>
+        {seasons.map((season) => {
+          return (<li key={season.seasonId}>{season.seasonName}</li>);}
+        )}
+      </ol> */}
+      <SeasonsList /> 
     </div>
   );
 }
