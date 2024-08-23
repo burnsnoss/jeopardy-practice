@@ -123,4 +123,6 @@ gonna try to do the season list page today and if im lucky, the game select page
 
 [React Routes](https://www.youtube.com/watch?v=xMYo9jaMah8)
 
-ran `npm install react-router-dom` and `npm i @types/react-router-dom`
+ran `npm install react-router-dom` and `npm i @types/react-router-dom` in game 
+
+routed the pages via url. Now I will make the "Start Game" button work and display the seasons list

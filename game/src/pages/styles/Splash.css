@@ -1,0 +1,56 @@
+@import url(Fonts.css);
+@import url(Colors.css);
+
+.app-splash {
+  background-color: var(--jeopardy-blue);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.app-logo {
+  height: 40vmin;
+}
+
+.start-button-container {
+  padding: 20px;
+}
+
+.start-button {
+  background-color: var(--jeopardy-blue);
+  color: white;
+  border: none;
+  padding: 50px 20px;
+  font-size: 30px;
+  font-family: 'VIQuanTuHoa';
+  cursor: pointer;
+}
+
+.footer {
+  background-color: var(--jeopardy-blue);
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+p {
+  font-family: 'ITCKorinnaRegular';
+  font-size: 0.6em;
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

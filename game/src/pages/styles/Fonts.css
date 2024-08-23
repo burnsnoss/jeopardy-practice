@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'VIQuanTuHoa';
+  src: local('VIQuanTuHoa'), url(../../resources/QUANTU1H.TTF) format('truetype');
+}
+
+@font-face {
+  font-family: 'ITCKorinnaRegular';
+  src: local('ITCKorinnaRegular'), url(../../resources/ITCKorinnaRegular.otf) format('opentype');
+}
