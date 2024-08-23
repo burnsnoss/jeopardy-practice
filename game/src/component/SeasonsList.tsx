@@ -1,11 +1,13 @@
 import { FC } from "react";
 import { SeasonsListDOM } from "../model/Season.model";
 
-export const SeasonsList: FC<SeasonsListDOM> = (props) => {
+export const SeasonsList: FC<SeasonsListDOM> = ({seasons}) => {
+
+  console.log(seasons)
   
   return (
     <div>
-      {props.seasons[0].seasonName}
+      <p>{seasons[0].seasonName}</p>
     </div>
   );
 }
