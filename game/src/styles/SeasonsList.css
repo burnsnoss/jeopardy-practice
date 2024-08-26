@@ -7,7 +7,8 @@
 
 .seasons-list-container {
   background-color: var(--jeopardy-blue);
-  max-width: 600px;
+  max-width: 650px;
+  margin: auto;
 }
 
 .season-data-container {
@@ -16,7 +17,6 @@
   border: 4px solid var(--jeopardy-blue-dark);
   border-radius: 15px;
   margin: 10px;
-  text-decoration: none;
 }
 
 .season-title {
@@ -30,4 +30,5 @@
 
 .episode-count {
   font-size: 0.8em;
+  padding-bottom: 20px;
 }

@@ -3,6 +3,7 @@ import { SeasonsListDOM, SeasonMetadata } from '../model/Season.model';
 import { useState, useEffect } from 'react';
 import { SeasonsList } from '../component/SeasonsList';
 import { config } from '../config';
+import '../styles/Seasons.css';
 
 export const Seasons = () => {
 
@@ -25,7 +26,7 @@ export const Seasons = () => {
   }, []);
 
   return (
-    <div>
+    <div className="seasons-container">
       <SeasonsList seasons={seasonsData.seasons} /> 
     </div>
   );
