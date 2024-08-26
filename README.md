@@ -54,6 +54,7 @@ npm ci
 Run Backend
 ===========
 ```
+cd server
 npm run backend
 ```
 
@@ -61,5 +62,6 @@ npm run backend
 Run Frontend
 ============
 ```
-npm run frontend
+cd game
+npm start
 ```

@@ -123,4 +123,21 @@ gonna try to do the season list page today and if im lucky, the game select page
 
 [React Routes](https://www.youtube.com/watch?v=xMYo9jaMah8)
 
-ran `npm install react-router-dom` and `npm i @types/react-router-dom`
+ran `npm install react-router-dom` and `npm i @types/react-router-dom` in game 
+
+routed the pages via url. Now I will make the "Start Game" button work and display the seasons list
+
+
+
+8/23/2024
+---------
+having trouble with the useEffect hook. It seems to not want to run
+
+fixed it using this [how-to](https://stackoverflow.com/questions/57847626/using-async-await-inside-a-react-functional-component)
+
+
+8/26/2024
+---------
+Gonna organize the seasons list page and get some basic components set up, preferably some components I can use again with the game selection page.
+
+[this tutorial](https://akoskm.com/how-to-type-react-props-with-typescript) was helpful in explaining prop type declarations in react typescript.
