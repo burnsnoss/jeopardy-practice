@@ -1,5 +1,5 @@
 import graphic from '../resources/jeopardy-graphic.jpg';
-import './styles/Splash.css';
+import '../styles/Splash.css';
 import { Link } from 'react-router-dom';
 
 export const Splash = () => {

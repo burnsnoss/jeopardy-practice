@@ -1,34 +1,35 @@
-import { useState, useEffect } from "react";
-import axios from 'axios';
-import { SeasonsListDOM, SeasonMetadata } from "../model/Season.model";
-import {config} from '../config';
+import { Link } from 'react-router-dom';
+import { SeasonsListDOM } from '../model/Season.model';
+import '../styles/SeasonsList.css';
 
-export const SeasonsList = () => {
-  const [seasonsData, setSeasonsData] = useState({seasons: [] as SeasonMetadata[]});
+export const SeasonsList = ({seasons}: SeasonsListDOM) => {
 
-  useEffect(() => {
-    async function getSeasons() { 
-      try {
-        const seasons = (await axios.get(`${config.serverUrl}/seasons`)).data.seasons;
-        setSeasonsData({ seasons: seasons });
-      } 
-      catch (error) {
-        throw new Error('Failed to retrieve seasons: ' + error);
-      }
-    }
+  console.log(seasons);
 
-    if (seasonsData.seasons.length === 0) {
-      getSeasons();
-    }
-  }, []);
+  const seasonListComponents = seasons.map((season) => {
+    //const startDateString = `${(season.startDate.getFullYear()).toString()}-${(season.startDate.getMonth()).toString()}-${(season.startDate.getDate()).toString()}`;
+    const startDate = new Date(season.startDate);
+    const endDate = new Date(season.endDate);
+    return (
+      <Link to={`/season/${season.seasonId}`}>
+        <div className="season-data-container">
+          <p className="season-title">{season.seasonName}</p>
+          <p className="date-range">
+            {startDate.getMonth() + 1}/{startDate.getDate()}/{startDate.getFullYear()}
+            &nbsp;-&nbsp;
+            {endDate.getMonth() + 1}/{endDate.getDate()}/{endDate.getFullYear()}</p>
+          <p className="episode-count">{season.episodeCount} episodes</p>
+        </div>
+      </Link>
+    );
+  });
+
   
   return (
-    <div>
-      <ol>
-        {seasonsData.seasons.map((season) => {
-          return (<li key={season.seasonId}>{season.seasonName}</li>);}
+    <div className="seasons-list-container">
+        {seasonListComponents.map((season) => {
+          return season;}
         )}
-      </ol>
     </div>
   );
 }
