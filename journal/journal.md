@@ -141,3 +141,5 @@ fixed it using this [how-to](https://stackoverflow.com/questions/57847626/using-
 Gonna organize the seasons list page and get some basic components set up, preferably some components I can use again with the game selection page.
 
 [this tutorial](https://akoskm.com/how-to-type-react-props-with-typescript) was helpful in explaining prop type declarations in react typescript.
+
+[useParams](https://reactrouter.com/en/main/hooks/use-params) react-router-dom hook
