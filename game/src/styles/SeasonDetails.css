@@ -1,11 +1,17 @@
-.seasons-container {
+@import url(Fonts.css);
+
+.season-details-container {
   width: 100%;
   height: auto;
   text-align: center;
 }
 
-.seasons-page-title {
+.season-list-title {
   font-size: 2.7em;
   font-family: "VIQuanTuHoa";
   margin: 20px;
+}
+
+.select-episode-text {
+  font-size: 1.4em;
 }

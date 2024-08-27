@@ -4,10 +4,7 @@ import '../styles/SeasonsList.css';
 
 export const SeasonsList = ({seasons}: SeasonsListDOM) => {
 
-  console.log(seasons);
-
   const seasonListComponents = seasons.map((season) => {
-    //const startDateString = `${(season.startDate.getFullYear()).toString()}-${(season.startDate.getMonth()).toString()}-${(season.startDate.getDate()).toString()}`;
     const startDate = new Date(season.startDate);
     const endDate = new Date(season.endDate);
     return (
@@ -27,9 +24,7 @@ export const SeasonsList = ({seasons}: SeasonsListDOM) => {
   
   return (
     <div className="seasons-list-container">
-        {seasonListComponents.map((season) => {
-          return season;}
-        )}
+        {seasonListComponents.map((season) => season)}
     </div>
   );
 }

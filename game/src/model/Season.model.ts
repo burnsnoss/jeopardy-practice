@@ -10,9 +10,13 @@ export interface SeasonMetadata {
   episodeCount: number;
 }
 
-export interface Season {
+export interface SeasonDOM {
   episodes: EpisodeMetadata[];
   name: string;
+}
+
+export interface EpisodesListDOM {
+  episodes: EpisodeMetadata[];
 }
 
 export interface EpisodeMetadata {

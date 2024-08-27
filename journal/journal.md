@@ -138,8 +138,15 @@ fixed it using this [how-to](https://stackoverflow.com/questions/57847626/using-
 
 8/26/2024
 ---------
-Gonna organize the seasons list page and get some basic components set up, preferably some components I can use again with the game selection page.
+Going to organize the seasons list page and get some basic components set up, preferably some components I can use again with the game selection page.
 
 [this tutorial](https://akoskm.com/how-to-type-react-props-with-typescript) was helpful in explaining prop type declarations in react typescript.
 
 [useParams](https://reactrouter.com/en/main/hooks/use-params) react-router-dom hook
+
+
+8/27/2024
+---------
+branch: game-select
+
+today we're going to get the season details from the backend which is essentially a list of episodes in that season, we're going to display them as a list of buttons essentially, just like the seasons list page. We also need to add sort of titles to these pages, a floating header would be perfect, but just titles are alright for now.

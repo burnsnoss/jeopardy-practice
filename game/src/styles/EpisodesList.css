@@ -1,21 +1,14 @@
-@import url(Fonts.css);
-@import url(Colors.css);
-
-:root {
-  background-color: var(--jeopardy-blue);
-}
-
-.seasons-list-container {
+.episodes-list-container {
   background-color: var(--jeopardy-blue);
   max-width: 650px;
   margin: auto;
 }
 
-.seasons-list-container a {
+.episodes-list-container a {
   text-decoration: none;
 }
 
-.season-data-container {
+.episode-data-container {
   background-color: var(--jeopardy-blue-light);
   font-family: "ITCKorinnaRegular";
   border: 4px solid var(--jeopardy-blue-dark);
@@ -23,17 +16,21 @@
   margin: 10px;
 }
 
-.season-title {
+.episode-title {
   font-family: "VIQuanTuHoa";
   font-size: 1.8em;
-  margin: 15px;
+  margin: 10px;
+  text-decoration: none;
 }
 
-.date-range {
-  font-size: 1.0em;
+.contestants {
+  font-size: 0.9em;
 }
 
-.episode-count {
-  font-size: 0.8em;
-  padding-bottom: 10px;
+.air-date {
+  font-size: 0.7em;
+}
+
+.note {
+  font-size: 0.7em;
 }

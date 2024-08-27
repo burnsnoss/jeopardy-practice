@@ -27,6 +27,7 @@ export const Seasons = () => {
 
   return (
     <div className="seasons-container">
+      <p className="seasons-page-title">Select Season</p>
       <SeasonsList seasons={seasonsData.seasons} /> 
     </div>
   );
