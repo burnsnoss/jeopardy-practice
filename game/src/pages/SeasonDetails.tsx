@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import axios from 'axios';
-import { EpisodeMetadata, SeasonDOM } from "../model/Season.model";
+import { EpisodeMetadata, Season } from "../model/Season.model";
 import { config } from '../config';
 import { EpisodesList } from '../component/EpisodesList';
 import '../styles/SeasonDetails.css';
@@ -9,7 +9,7 @@ import '../styles/SeasonDetails.css';
 export const SeasonDetails = () => {
   const { seasonId } = useParams();
 
-  const [seasonData, setSeasonData] = useState({episodes: [] as EpisodeMetadata[], name: ''} as SeasonDOM);
+  const [seasonData, setSeasonData] = useState({episodes: [] as EpisodeMetadata[], name: ''} as Season);
 
   useEffect(() => {
     async function getSeason() { 

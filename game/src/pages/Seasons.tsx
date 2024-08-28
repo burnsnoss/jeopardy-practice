@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { SeasonsListDOM, SeasonMetadata } from '../model/Season.model';
+import { SeasonsListProps, SeasonMetadata } from '../model/Season.model';
 import { useState, useEffect } from 'react';
 import { SeasonsList } from '../component/SeasonsList';
 import { config } from '../config';
@@ -7,7 +7,7 @@ import '../styles/Seasons.css';
 
 export const Seasons = () => {
 
-  const [seasonsData, setSeasonsData] = useState({seasons: [] as SeasonMetadata[]} as SeasonsListDOM);
+  const [seasonsData, setSeasonsData] = useState({seasons: [] as SeasonMetadata[]} as SeasonsListProps);
 
   useEffect(() => {
     async function getSeasons() { 

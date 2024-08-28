@@ -1,8 +1,11 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { GameDOM } from '../model/Game.model';
+import { GameModel } from '../model/Game.model';
 import { config } from '../config';
+import { JeopardyRound } from '../component/JeopardyRound';
+import { FinalJeopardyRound } from '../component/FinalJeopardyRound';
+import '../styles/Game.css';
 
 
 export const Game = () => {
@@ -24,13 +27,15 @@ export const Game = () => {
       clue: '',
       correctResponse: ''
     }
-  } as GameDOM);
+  } as GameModel);
 
-  // fetch the game
+  const [roundType, setRoundType] = useState(0);
+  const incrementRound = () => {setRoundType(roundType + 1)};
+
   useEffect(() => {
     async function getGame() { 
       try {
-        const data = (await axios.get(`${config.serverUrl}/seasons/${gameId}`)).data;
+        const data = (await axios.get(`${config.serverUrl}/game/${gameId}`)).data;
         setGameData({
           title: data.title,
           note: data.note,
@@ -59,12 +64,23 @@ export const Game = () => {
     }
   }, []);
 
-  // pass to some component
-  return (
-    <div>
-      <JeopardyRound columns={gameData.jeopardyRound.columns} />
-      <DoubleJeopardyRound columns={gameData.jeopardyRound.columns} style={{display: 'none'}}/>
-      <FinalJeopardyRound finalJeopardyRound={gameData.finalJeopardyRound} style={{display: 'none'}}/>
-    </div>
-  );
+  if (roundType === 0) {
+    return (
+      <div>
+        <JeopardyRound columns={gameData.jeopardyRound.columns} roundSwitcher={incrementRound} />
+      </div>
+    );
+  } else if (roundType === 1) {
+    return (
+      <div>
+        <JeopardyRound columns={gameData.doubleJeopardyRound.columns} roundSwitcher={incrementRound} />
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <FinalJeopardyRound roundData={gameData.finalJeopardyRound} />
+      </div>
+    );
+  }
 }

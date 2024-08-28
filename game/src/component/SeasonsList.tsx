@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { SeasonsListDOM } from '../model/Season.model';
+import { SeasonsListProps } from '../model/Season.model';
 import '../styles/SeasonsList.css';
 
-export const SeasonsList = ({seasons}: SeasonsListDOM) => {
+export const SeasonsList = ({seasons}: SeasonsListProps) => {
 
   const seasonListComponents = seasons.map((season) => {
     const startDate = new Date(season.startDate);

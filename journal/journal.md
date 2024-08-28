@@ -154,3 +154,8 @@ today we're going to get the season details from the backend which is essentiall
 new branch: game-logic
 
 going to try to do the fetching and some simple scaffolding for the game board
+
+
+8/28/2024
+---------
+[stackoverflow post](https://stackoverflow.com/questions/55028583/how-do-i-call-setstate-from-another-component-in-reactjs) about changing state variables in parent components from the child component. I imagine this is how we will switch between jeopardy/doublejeopardy rounds etc.

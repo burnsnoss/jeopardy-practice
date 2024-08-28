@@ -1,4 +1,4 @@
-export interface GameDOM {
+export interface GameModel {
   title: string;
   note: string;
   contestants: string[];
@@ -9,6 +9,11 @@ export interface GameDOM {
 
 export interface Round {
   columns: Column[];
+}
+
+export interface RoundProps {
+  columns: Column[];
+  roundSwitcher: () => void;
 }
 
 export interface Column {
@@ -28,4 +33,8 @@ interface FinalRound {
   categoryComment: string;
   clue: string;
   correctResponse: string;
+}
+
+export interface FinalRoundProps {
+  roundData: FinalRound;
 }
