@@ -150,3 +150,7 @@ Going to organize the seasons list page and get some basic components set up, pr
 branch: game-select
 
 today we're going to get the season details from the backend which is essentially a list of episodes in that season, we're going to display them as a list of buttons essentially, just like the seasons list page. We also need to add sort of titles to these pages, a floating header would be perfect, but just titles are alright for now.
+
+new branch: game-logic
+
+going to try to do the fetching and some simple scaffolding for the game board
