@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import { RoundProps } from '../model/Game.model';
+import { GameBoard } from './GameBoard';
 
 
 export const JeopardyRound = ({columns, roundSwitcher}: RoundProps) => {
@@ -9,9 +10,11 @@ export const JeopardyRound = ({columns, roundSwitcher}: RoundProps) => {
     }, [roundSwitcher]
   )
 
+  
+
   return (
     <div>
-      <button onClick={handleRoundSwitch}>Double Jeopardy</button>
+      <GameBoard columns={columns} />
     </div>
   );
 }

@@ -117,6 +117,7 @@ function parseRound(doc: Document, isDJ: boolean = false): Round {
       const responseDom = newDocFromElementId(doc, `clue_${cluePrefix}_${i}_${j}_r`);
       const responseText = responseDom.querySelector('em')?.textContent;
       clues.push({
+        clueId: [i, j],
         value: clueValue,
         clue: clueText || '',
         correctResponse: responseText || ''

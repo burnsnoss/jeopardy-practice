@@ -23,9 +23,18 @@ export interface Column {
 }
 
 export interface Clue {
+  clueId: number[];
   value: number;
   clue: string;
   correctResponse: string;
+}
+
+export interface ClueProps {
+  clueId: number[];
+  value: number;
+  clue: string;
+  correctResponse: string;
+  backToBoardHandler: (clueId: number[]) => void;
 }
 
 interface FinalRound {

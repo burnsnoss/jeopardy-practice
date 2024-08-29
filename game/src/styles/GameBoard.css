@@ -1,0 +1,42 @@
+.gameboard-container {
+  width: 100%;
+}
+
+.categories-container {
+  display: flex;
+}
+
+.panel-container {
+  margin: auto;
+}
+
+.panel {
+  align-content: center;
+  text-align: center;
+  margin: 10px 10px;
+  width: 320px;
+  height: 150px;
+  border: 8px solid var(--jeopardy-blue-dark);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.category-text {
+  font-family: "VIQuanTuHoa";
+  font-size: 2.8em;
+  color: white;
+}
+
+.clues-board-container {
+  display: flex;
+}
+
+.clue-column-container {
+  margin: auto;
+}
+
+.clue-value-text {
+  font-family: "VIQuanTuHoa";
+  font-size: 5.0em;
+  color: var(--jeopardy-gold);
+}

@@ -18,6 +18,7 @@ export interface Column {
 }
 
 export interface Clue {
+  clueId: number[];
   value: number;
   clue: string;
   correctResponse: string;
