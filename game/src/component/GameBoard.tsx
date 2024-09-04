@@ -1,14 +1,30 @@
 import { useState, useCallback } from 'react';
-import { Round } from '../model/Game.model';
+import { RoundProps } from '../model/Game.model';
 import { CluePanel } from './CluePanel';
 import '../styles/GameBoard.css';
 
-export const GameBoard = ({columns}: Round) => {
+export const GameBoard = ({columns, incrementRound}: RoundProps) => {
 
-  const [clueCoords, setClueCoords] = useState([] as number[]);
-  const setClueCoordsHandler = (clueId: number[]) => {setClueCoords(clueId)};
+  const [currentClueCoords, setCurrentClueCoords] = useState([] as number[]);
+  const [cluesAnswered, setClueAnswered] = useState(() => {
+    let cluesAnswered = new Map<number[], boolean>();
+    columns.map((column) => {
+      column.clues.map((clue) => {
+        cluesAnswered.set(clue.clueId, clue.clue === '' ? true : false);
+      });
+    });
+    return cluesAnswered;
+  });
 
-  // TODO: big map of clueIds and booleans for answered/unanswered?
+  const handleIncrementRound = useCallback(() => {
+    incrementRound();
+  }, [incrementRound]);
+
+  const setClueAnsweredHandler = useCallback((coords: number[]) => {
+    setClueAnswered(new Map(cluesAnswered).set(coords, true));
+  }, [setClueAnswered]);
+  
+
   
   // map categories to panels
   const categoryPanels = columns.map((column) => {
@@ -22,13 +38,13 @@ export const GameBoard = ({columns}: Round) => {
   });
 
   // map clues to panels
-  const cluePanelColumns = columns.map((column) => {
+  const cluePanelColumns = columns.map ((column) => {
 
     const categoryColumn = column.clues.map((clue) => {
       return (
         <div className="panel-container">
-            <div className="panel" onClick={setClueCoords(clue.clueId)}>
-              <div className="clue-value-text">${clue.value}</div>
+            <div className="panel" onClick={() => setCurrentClueCoords(clue.clueId) }>
+              <div className="clue-value-text">{clue.clue === '' || cluesAnswered.get(clue.clueId) ? '' : `${clue.value}`}</div>
             </div>
         </div>
       );
@@ -45,20 +61,15 @@ export const GameBoard = ({columns}: Round) => {
         value={clue.value}
         clue={clue.clue}
         correctResponse={clue.correctResponse}
-        backToBoardHandler={setClueCoordsHandler}
+        setClueAnswered={() => setClueAnsweredHandler([coords[0], coords[1]])}
+        backToBoardHandler={() => setCurrentClueCoords([])}
       />
     );
   }
 
-  if (clueCoords.length > 0) {
+  function getClueSelectBoard() {
     return (
-      <div className="gameboard-container">
-        {getCluePanel(clueCoords)}
-      </div>
-    );
-  } else {
-    return (
-      <div className="gameboard-container">
+      <div>
         <div className="categories-container">
           {categoryPanels.map((panel) => panel)}
         </div>
@@ -71,6 +82,37 @@ export const GameBoard = ({columns}: Round) => {
             );
           })}
         </div>
+      </div>
+    );
+  }
+
+  // check for completion of the board and trigger incrementRound if so
+  const cluesAnsweredIterator = cluesAnswered.entries();
+  let cluesAnsweredTotal = 0;
+  for (const ca of cluesAnsweredIterator) {
+    if (ca) {
+      cluesAnsweredTotal++;
+    }
+  }
+
+  if (cluesAnsweredTotal >= 3) {
+    console.log('Round complete!');
+    handleIncrementRound();
+  }
+
+
+
+  // render clue panel if clue is active
+  if (currentClueCoords.length > 0) {
+    return (
+      <div className="gameboard-container">
+        {getCluePanel(currentClueCoords)}
+      </div>
+    );
+  } else { // else render categories + values
+    return (
+      <div className="gameboard-container">
+        {getClueSelectBoard()}
       </div>
     );
   }

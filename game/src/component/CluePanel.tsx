@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { ClueProps } from '../model/Game.model';
 
-export const CluePanel = ({clueId, value, clue, correctResponse, backToBoardHandler}: ClueProps) => {
+export const CluePanel = ({clueId, value, clue, correctResponse, setClueAnswered, backToBoardHandler}: ClueProps) => {
 
   const [reavealState, setRevealState] = useState(0);
   const incrementRevealState = () => {setRevealState(reavealState + 1)};
-  const btbHandler = () => {backToBoardHandler([])};
+  // const btbHandler = () => {backToBoardHandler([])};
 
   if (reavealState === 0) {
     return (
@@ -17,7 +17,10 @@ export const CluePanel = ({clueId, value, clue, correctResponse, backToBoardHand
     );
   } else {
     return (
-      <div onClick={btbHandler}>
+      <div onClick={() => {
+        backToBoardHandler([]);
+        setClueAnswered(clueId);
+      }}>
         <p>{correctResponse}</p>
       </div>
     );

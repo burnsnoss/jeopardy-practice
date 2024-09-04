@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { GameModel } from '../model/Game.model';
 import { config } from '../config';
-import { JeopardyRound } from '../component/JeopardyRound';
+import { GameBoard } from '../component/GameBoard';
 import { FinalJeopardyRound } from '../component/FinalJeopardyRound';
 import '../styles/Game.css';
 
@@ -67,13 +67,13 @@ export const Game = () => {
   if (roundType === 0) {
     return (
       <div>
-        <JeopardyRound columns={gameData.jeopardyRound.columns} roundSwitcher={incrementRound} />
+        <GameBoard key={"jeopardy"} columns={gameData.jeopardyRound.columns} incrementRound={incrementRound} />
       </div>
     );
   } else if (roundType === 1) {
     return (
       <div>
-        <JeopardyRound columns={gameData.doubleJeopardyRound.columns} roundSwitcher={incrementRound} />
+        <GameBoard key={"doubleJeopardy"} columns={gameData.doubleJeopardyRound.columns} incrementRound={incrementRound} />
       </div>
     );
   } else {

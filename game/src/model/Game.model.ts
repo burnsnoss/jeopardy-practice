@@ -13,7 +13,7 @@ export interface Round {
 
 export interface RoundProps {
   columns: Column[];
-  roundSwitcher: () => void;
+  incrementRound: () => void;
 }
 
 export interface Column {
@@ -34,6 +34,7 @@ export interface ClueProps {
   value: number;
   clue: string;
   correctResponse: string;
+  setClueAnswered: (clueId: number[]) => void;
   backToBoardHandler: (clueId: number[]) => void;
 }
 
