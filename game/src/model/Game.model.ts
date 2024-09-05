@@ -30,6 +30,7 @@ export interface Clue {
 }
 
 export interface ClueProps {
+  category: string;
   clueId: number[];
   value: number;
   clue: string;
