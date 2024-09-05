@@ -1,4 +1,4 @@
-export interface Game {
+export interface GameModel {
   title: string;
   note: string;
   contestants: string[];
@@ -9,6 +9,11 @@ export interface Game {
 
 export interface Round {
   columns: Column[];
+}
+
+export interface RoundProps {
+  columns: Column[];
+  incrementRound: () => void;
 }
 
 export interface Column {
@@ -24,9 +29,23 @@ export interface Clue {
   correctResponse: string;
 }
 
+export interface ClueProps {
+  category: string;
+  clueId: number[];
+  value: number;
+  clue: string;
+  correctResponse: string;
+  setClueAnswered: (clueId: number[]) => void;
+  backToBoardHandler: (clueId: number[]) => void;
+}
+
 interface FinalRound {
   category: string;
   categoryComment: string;
   clue: string;
   correctResponse: string;
+}
+
+export interface FinalRoundProps {
+  roundData: FinalRound;
 }

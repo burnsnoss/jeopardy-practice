@@ -150,3 +150,26 @@ Going to organize the seasons list page and get some basic components set up, pr
 branch: game-select
 
 today we're going to get the season details from the backend which is essentially a list of episodes in that season, we're going to display them as a list of buttons essentially, just like the seasons list page. We also need to add sort of titles to these pages, a floating header would be perfect, but just titles are alright for now.
+
+new branch: game-logic
+
+going to try to do the fetching and some simple scaffolding for the game board
+
+
+8/28/2024
+---------
+[stackoverflow post](https://stackoverflow.com/questions/55028583/how-do-i-call-setstate-from-another-component-in-reactjs) about changing state variables in parent components from the child component. I imagine this is how we will switch between jeopardy/doublejeopardy rounds etc.
+
+
+
+9/3/2024
+--------
+got the clueAnswered map set up which basically checks for answered clues so we can disappear the values upon complete answer. The clue still comes up when you click on the empty square after its been answered, but honestly not really a problem. 
+
+I think we still are just working on completing the game and switching to double jeop and finale jeop. I need like a counting mechanism for how many clues have been answered already. I think I will use the cluesAnswered map and iterate over it every time. its only 30 iterations of checking a bool.
+
+Having a confusing problem where no matter to what the increment function increments from zero, i.e
+  - roundType = setState(0), then increments to 1
+    - this will only happen when the if statement i use in Game.tsx checks for a roundType of 2
+  - roundType = setState(0), then increments to 2
+    - this will only happen when the if statement i use in Game.tsx checks for a roundType of 1

@@ -114,9 +114,10 @@ function parseRound(doc: Document, isDJ: boolean = false): Round {
     for (let j = 1; j <= 5; j++) {
       const clueValue = j * valueMultiplier;
       const clueText = doc.getElementById(`clue_${cluePrefix}_${i}_${j}`)?.textContent; // TODO: decide if innerHTML or textContent is better
-      const responseDom = newDocFromElementId(doc, `clue_${cluePrefix}_${i}_${j}_r`);
-      const responseText = responseDom.querySelector('em')?.textContent;
+      const responseDom = clueText ? newDocFromElementId(doc, `clue_${cluePrefix}_${i}_${j}_r`) : null;
+      const responseText = responseDom !== null ? responseDom.querySelector('em')?.textContent : '';
       clues.push({
+        clueId: [i, j],
         value: clueValue,
         clue: clueText || '',
         correctResponse: responseText || ''

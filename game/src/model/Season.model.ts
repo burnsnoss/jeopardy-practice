@@ -1,4 +1,4 @@
-export interface SeasonsListDOM {
+export interface SeasonsListProps {
   seasons: SeasonMetadata[];
 }
 
@@ -10,12 +10,12 @@ export interface SeasonMetadata {
   episodeCount: number;
 }
 
-export interface SeasonDOM {
+export interface Season {
   episodes: EpisodeMetadata[];
   name: string;
 }
 
-export interface EpisodesListDOM {
+export interface EpisodesListProps {
   episodes: EpisodeMetadata[];
 }
 
